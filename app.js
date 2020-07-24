@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
-let port = 5000;
+let port = process.env.port || 5000;
 
 
 mongoose.connect("mongodb+srv://users:eAeVwwEM4gLnxUPX@cluster0.obocu.gcp.mongodb.net/users?retryWrites=true&w=majority");
