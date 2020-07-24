@@ -44,7 +44,7 @@ app.use(function(err, req, res, next){
 
 // FIM MIDDLEWARE *************************************************
 
-app.listen(process.env.port || port, () =>{
+app.listen(port, () =>{
   console.log('Servidor em execução no porto: '+ port);
   console.log('Connected to Database '+'users');
 });
