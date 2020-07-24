@@ -5,15 +5,14 @@ const cors = require("cors");
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
-let port = process.env.port || 5000;
+let port = 5000;
 
 
 mongoose.connect("mongodb+srv://users:eAeVwwEM4gLnxUPX@cluster0.obocu.gcp.mongodb.net/users?retryWrites=true&w=majority");
 
 // Confirma ligação na consola
 mongoose.connection.on('connected', function () {
-      
- // 'process.env.port'
+  process.env.port
 });
 // Mensagem de Erro
 mongoose.connection.on('error', (err) => {
@@ -44,7 +43,7 @@ app.use(function(err, req, res, next){
 
 // FIM MIDDLEWARE *************************************************
 
-app.listen(port, () =>{
+app.listen(process.env.port || port, () =>{
   console.log('Servidor em execução no porto: '+ port);
   console.log('Connected to Database '+'users');
 });
