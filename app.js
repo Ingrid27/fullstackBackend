@@ -1,24 +1,28 @@
 // associar as dependências instaladas
 const express = require('express');
-const cors = require("cors");
+
 // inicializar app express
 const app = express();
+
+const cors = require('cors');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose')
-let port = 5000;
+const mongoose = require('mongoose');
+const config = require('./config/keys.config.js');
+let port = process.env.PORT || 5000;
 
 
-mongoose.connect("mongodb+srv://users:eAeVwwEM4gLnxUPX@cluster0.obocu.gcp.mongodb.net/users?retryWrites=true&w=majority");
+mongoose.connect(config.mongodbUri, {useUnifiedTopology: true, useNewUrlParser: true});
 
-// Confirma ligação na consola
-mongoose.connection.on('connected', function () {
-  process.env.port
-});
-// Mensagem de Erro
-mongoose.connection.on('error', (err) => {
-  console.log('Database error'+err);
+  // Confirma ligação na consola
+  mongoose.connection.on('connected', function () { 
+    console.log('Database connected')
+  });
+  // Mensagem de Erro
+  mongoose.connection.on('error', (err) => {
+    console.log('Database error'+err);
 
-});
+  });
+  
 
 app.get('/', function(req, res){
   res.send('END POINT INVÁLIDO!');
@@ -26,10 +30,11 @@ app.get('/', function(req, res){
 
 
 // MIDDLEWARE ******************************************
-app.use(cors());
 
 // este middleware deve estar acima das routes-handlers!
 app.use(bodyParser.json());
+
+app.use(cors())
 
 // todo o url começado por '/api' chama as rotas em './routes/api'
 const routes = require('./routes/api');
@@ -43,7 +48,6 @@ app.use(function(err, req, res, next){
 
 // FIM MIDDLEWARE *************************************************
 
-app.listen(process.env.port || port, () =>{
-  console.log('Servidor em execução no porto: '+ port);
-  console.log('Connected to Database '+'users');
+app.listen(port, function () {
+  console.log('Server listening on port '+ port);
 });
