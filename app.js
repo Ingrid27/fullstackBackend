@@ -13,7 +13,7 @@ mongoose.connect("mongodb+srv://users:eAeVwwEM4gLnxUPX@cluster0.obocu.gcp.mongod
 // Confirma ligação na consola
 mongoose.connection.on('connected', function () {
       
-  'process.env.port'
+ // 'process.env.port'
 });
 // Mensagem de Erro
 mongoose.connection.on('error', (err) => {
