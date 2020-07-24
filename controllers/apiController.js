@@ -1,8 +1,10 @@
 //importar modelo
 const Investments = require('../models/investment') 
 
+// exporta function 'test', chamada em '/routes/api.js'
 exports.test = function (req, res) {
   res.send('Olá! Teste ao Controller');
+  //res.render('Investments');
 };
 
 // TODO: listar pontos de interesse da BD

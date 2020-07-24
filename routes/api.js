@@ -9,9 +9,6 @@ const apiController = require('../controllers/apiController');
 router.get('/teste', apiController.test);
 module.exports = router;
 
-// url do teste será: http://localhost:5000/api/teste
-router.get('/teste', apiController.test);
-
 // TODO: listar pontos de interesse da BD
 router.get('/details',apiController.details);
 

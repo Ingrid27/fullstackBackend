@@ -1,5 +1,6 @@
 // associar as dependências instaladas
 const express = require('express');
+const cors = require("cors");
 // inicializar app express
 const app = express();
 const bodyParser = require('body-parser');
@@ -12,7 +13,6 @@ mongoose.connect("mongodb+srv://users:eAeVwwEM4gLnxUPX@cluster0.obocu.gcp.mongod
 // Confirma ligação na consola
 mongoose.connection.on('connected', function () {
       
-  // servidor á escuta no porto 5000
   // 'process.env.port': caso usemos Heroku
 });
 // Mensagem de Erro
@@ -25,7 +25,9 @@ app.get('/', function(req, res){
   res.send('END POINT INVÁLIDO!');
 });
 
+
 // MIDDLEWARE ******************************************
+app.use(cors());
 
 // este middleware deve estar acima das routes-handlers!
 app.use(bodyParser.json());
@@ -44,5 +46,5 @@ app.use(function(err, req, res, next){
 
 app.listen(process.env.port || port, () =>{
   console.log('Servidor em execução no porto: '+ port);
-console.log('Connected to Database '+'users');
+  console.log('Connected to Database '+'users');
 });
