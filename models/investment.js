@@ -7,7 +7,7 @@ const investmentSchema = new Schema({
     required: [true, '*Campo obrigatório!’']
   },
   value: {
-    type: Number,
+    type: Float64Array,
     required: [true, '*Campo obrigatório!’']
   },
   date: {

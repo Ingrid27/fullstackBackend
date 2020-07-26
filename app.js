@@ -8,7 +8,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const config = require('./config/keys.config.js');
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 8000;
 
 
 mongoose.connect(config.mongodbUri, {useUnifiedTopology: true, useNewUrlParser: true});
