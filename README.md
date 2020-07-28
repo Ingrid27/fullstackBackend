@@ -50,12 +50,12 @@ git clone https://github.com/Ingrid27/fullstackBackend.git
  ## Testar o GET 
  
  Rota para visualizar os dados 
- /api/details 
+ https://api-fullstackgo.herokuapp.com/api/details 
  
  ## Testar o POST
  
  Rota para adicionar dados
- /api/interest
+ https://api-fullstackgo.herokuapp.com/api/interest
  
  exemplo para body:
  
@@ -68,7 +68,7 @@ git clone https://github.com/Ingrid27/fullstackBackend.git
  ## Testar o PUT
  
  Rota para atualalizar dados
- /api/interest/_id
+ https://api-fullstackgo.herokuapp.com/api/interest/_id
 
  exemplo para body:
  
@@ -79,4 +79,4 @@ git clone https://github.com/Ingrid27/fullstackBackend.git
  ## Testar o DELETE
  
  Rota para deletar dados
- /api/interest/_id
+ https://api-fullstackgo.herokuapp.com/api/interest/_id
