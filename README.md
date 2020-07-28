@@ -28,15 +28,15 @@ git clone https://github.com/Ingrid27/fullstackBackend.git
  
  npm install body-parser
  
- ###cors
+ ### cors
  
  npm install cors
  
- ###express
+ ### express
  
  npm install express
  
- ###mongoose
+ ### mongoose
  
  npm install mongoose
  
@@ -47,12 +47,12 @@ git clone https://github.com/Ingrid27/fullstackBackend.git
  
  ## Rotas para teste de API
  
- ##Testar o GET 
+ ## Testar o GET 
  
  Rota para visualizar os dados 
  /api/details 
  
- ##Testar o POST
+ ## Testar o POST
  
  Rota para adicionar dados
  /api/interest
@@ -65,7 +65,7 @@ git clone https://github.com/Ingrid27/fullstackBackend.git
    "date" : "27/07/2020"
 }
 
- ##Testar o PUT
+ ## Testar o PUT
  
  Rota para atualalizar dados
  /api/interest/_id
@@ -76,7 +76,7 @@ git clone https://github.com/Ingrid27/fullstackBackend.git
   "value": 150
  }
  
- ##Testar o DELETE
+ ## Testar o DELETE
  
  Rota para deletar dados
  /api/interest/_id
