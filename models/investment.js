@@ -7,18 +7,20 @@ const investmentSchema = new Schema({
     required: [true, '*Campo obrigatório!’']
   },
   value: {
-    type: Float64Array,
+    type: Number,
     required: [true, '*Campo obrigatório!’']
   },
   date: {
     type: String,
     required: [true, '*Campo obrigatório!’']
-  }
+  },
+  users: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'db-name.users'
+  }]
 // TODO: geo location
 });
 
-// criar Modelo_PI baseado em investmentSchema: 'invest'->nome da // coleção
 const Investments = mongoose.model('investments', investmentSchema);
 
-// exportar Modelo_PI
 module.exports = Investments;
