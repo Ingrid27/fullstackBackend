@@ -24,19 +24,19 @@ git clone https://github.com/Ingrid27/fullstackBackend.git
  
  ### Instale as dependencias
  
- ####body-parser
+ ###body-parser
  
  npm install body-parser
  
- ####cors
+ ###cors
  
  npm install cors
  
- ####express
+ ###express
  
  npm install express
  
- ####mongoose
+ ###mongoose
  
  npm install mongoose
  
